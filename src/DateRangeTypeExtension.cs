@@ -16,12 +16,9 @@ public static class DateRangeTypeExtension
     /// Returns UTC values
     /// </summary>
     [Pure]
-    public static (System.DateTime? startAt, System.DateTime? endAt)? GetDateTimesFromRange(this Enums.DateRangeType.DateRangeType? dateRangeType, System.TimeZoneInfo? timeZoneInfo)
+    public static (System.DateTime? startAt, System.DateTime? endAt) GetDateTimesFromRange(this Enums.DateRangeType.DateRangeType dateRangeType, System.TimeZoneInfo timeZoneInfo)
     {
-        if (dateRangeType == null || timeZoneInfo == null)
-            return null;
-
-        System.DateTime utcNow = System.DateTime.UtcNow;
+         System.DateTime utcNow = System.DateTime.UtcNow;
 
         switch (dateRangeType.Name)
         {
@@ -37,7 +34,7 @@ public static class DateRangeTypeExtension
                     return (start, end);
                 }
             case nameof(Enums.DateRangeType.DateRangeType.Custom):
-                return null;
+                return (null, null);
             case nameof(Enums.DateRangeType.DateRangeType.CurrentWeek):
                 {
                     System.DateTime start = utcNow.ToStartOfTzWeek(timeZoneInfo);
