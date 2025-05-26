@@ -1,5 +1,5 @@
 ﻿using Soenneker.Tests.FixturedUnit;
-using FluentAssertions;
+using AwesomeAssertions;
 using Soenneker.Extensions.DateTime;
 using Soenneker.Extensions.DateTime.Month;
 using Soenneker.Utils.TimeZones;
