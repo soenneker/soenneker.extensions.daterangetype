@@ -26,7 +26,7 @@
         </PackageReference>
         <PackageReference Include="Soenneker.Utils.Test" Version="3.0.294" />
         <PackageReference Include="Soenneker.Tests.FixturedUnit" Version="3.0.2006" />
-        <PackageReference Include="Soenneker.Utils.TimeZones" Version="3.0.743" />
+        <PackageReference Include="Soenneker.Utils.TimeZones" Version="3.0.744" />
         <PackageReference Include="xUnit.v3" Version="3.1.0" />
     </ItemGroup>
 
