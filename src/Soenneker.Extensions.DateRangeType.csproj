@@ -42,6 +42,6 @@
 
     <ItemGroup>
       <PackageReference Include="Soenneker.Enums.DateRangeType" Version="4.0.83" />
-      <PackageReference Include="Soenneker.Extensions.DateTime.Suite" Version="4.0.3856" />
+      <PackageReference Include="Soenneker.Extensions.DateTime.Suite" Version="4.0.3866" />
     </ItemGroup>
 </Project>
