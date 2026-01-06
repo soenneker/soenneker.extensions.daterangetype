@@ -1,7 +1,7 @@
 ﻿using Soenneker.Tests.FixturedUnit;
 using AwesomeAssertions;
-using Soenneker.Extensions.DateTime;
-using Soenneker.Extensions.DateTime.Month;
+using Soenneker.Extensions.DateTimeOffsets;
+using Soenneker.Extensions.DateTimeOffsets.Months;
 using Soenneker.Utils.TimeZones;
 using Xunit;
 
@@ -25,11 +25,11 @@ public class DateRangeTypeExtensionTests : FixturedUnitTest
     {
         Enums.DateRangeType.DateRangeType dateRange = Enums.DateRangeType.DateRangeType.Today;
 
-        (System.DateTime? startAt, System.DateTime? endAt) = dateRange.GetDateTimesFromRange(Tz.Eastern);
+        (System.DateTimeOffset? startAt, System.DateTimeOffset? endAt) = dateRange.GetDateTimesFromRange(Tz.Eastern);
 
-        System.DateTime eastern1 = startAt.Value.ToTz(Tz.Eastern);
+        System.DateTimeOffset eastern1 = startAt.Value.ToTz(Tz.Eastern);
 
-        System.DateTime eastern2 = endAt.Value.ToTz(Tz.Eastern);
+        System.DateTimeOffset eastern2 = endAt.Value.ToTz(Tz.Eastern);
     }
 
     [Fact]
@@ -37,7 +37,7 @@ public class DateRangeTypeExtensionTests : FixturedUnitTest
     {
         Enums.DateRangeType.DateRangeType dateRange = Enums.DateRangeType.DateRangeType.Yesterday;
 
-        (System.DateTime? startAt, System.DateTime? endAt) = dateRange.GetDateTimesFromRange(Tz.Eastern);
+        (System.DateTimeOffset? startAt, System.DateTimeOffset? endAt) = dateRange.GetDateTimesFromRange(Tz.Eastern);
 
         _ = startAt.Value.ToTz(Tz.Eastern);
 
@@ -49,7 +49,7 @@ public class DateRangeTypeExtensionTests : FixturedUnitTest
     {
         Enums.DateRangeType.DateRangeType dateRange = Enums.DateRangeType.DateRangeType.CurrentWeek;
 
-        (System.DateTime? startAt, System.DateTime? endAt) = dateRange.GetDateTimesFromRange(Tz.Eastern);
+        (System.DateTimeOffset? startAt, System.DateTimeOffset? endAt) = dateRange.GetDateTimesFromRange(Tz.Eastern);
 
         _ = startAt.Value.ToTz(Tz.Eastern);
 
@@ -61,7 +61,7 @@ public class DateRangeTypeExtensionTests : FixturedUnitTest
     {
         Enums.DateRangeType.DateRangeType dateRange = Enums.DateRangeType.DateRangeType.PreviousWeek;
 
-        (System.DateTime? startAt, System.DateTime? endAt) = dateRange.GetDateTimesFromRange(Tz.Eastern);
+        (System.DateTimeOffset? startAt, System.DateTimeOffset? endAt) = dateRange.GetDateTimesFromRange(Tz.Eastern);
 
         _ = startAt.Value.ToTz(Tz.Eastern);
         _ = endAt.Value.ToTz(Tz.Eastern);
@@ -72,9 +72,9 @@ public class DateRangeTypeExtensionTests : FixturedUnitTest
     {
         Enums.DateRangeType.DateRangeType dateRange = Enums.DateRangeType.DateRangeType.CurrentMonth;
 
-        (System.DateTime? startAt, System.DateTime? endAt) = dateRange.GetDateTimesFromRange(Tz.Eastern);
+        (System.DateTimeOffset? startAt, System.DateTimeOffset? endAt) = dateRange.GetDateTimesFromRange(Tz.Eastern);
 
-        System.DateTime eastern1 = startAt.Value.ToTz(Tz.Eastern);
+        System.DateTimeOffset eastern1 = startAt.Value.ToTz(Tz.Eastern);
         eastern1.Day.Should().Be(1);
 
         _ = endAt.Value.ToTz(Tz.Eastern);
@@ -87,15 +87,15 @@ public class DateRangeTypeExtensionTests : FixturedUnitTest
 
         //List<DateTime>? result = dateRange.GetDateTimesFromRange();
 
-        System.DateTime utcNow = System.DateTime.UtcNow;
+        System.DateTimeOffset utcNow = System.DateTimeOffset.UtcNow;
 
-        System.DateTime start = utcNow.ToStartOfPreviousTzMonth(Tz.Eastern);
-        System.DateTime end = utcNow.ToEndOfPreviousTzMonth(Tz.Eastern);
+        System.DateTimeOffset start = utcNow.ToStartOfPreviousTzMonth(Tz.Eastern);
+        System.DateTimeOffset end = utcNow.ToEndOfPreviousTzMonth(Tz.Eastern);
 
-        System.DateTime eastern1 = start.ToTz(Tz.Eastern);
+        System.DateTimeOffset eastern1 = start.ToTz(Tz.Eastern);
         eastern1.Day.Should().Be(1);
 
-        System.DateTime eastern2 = end.ToTz(Tz.Eastern);
+        System.DateTimeOffset eastern2 = end.ToTz(Tz.Eastern);
         eastern2.Day.Should().BeGreaterThan(27);
         eastern2.Hour.Should().Be(23);
         eastern2.Minute.Should().Be(59);
@@ -106,12 +106,12 @@ public class DateRangeTypeExtensionTests : FixturedUnitTest
     {
         Enums.DateRangeType.DateRangeType dateRange = Enums.DateRangeType.DateRangeType.PreviousYear;
 
-        (System.DateTime? startAt, System.DateTime? endAt) = dateRange.GetDateTimesFromRange(Tz.Eastern);
+        (System.DateTimeOffset? startAt, System.DateTimeOffset? endAt) = dateRange.GetDateTimesFromRange(Tz.Eastern);
 
-        System.DateTime eastern1 = startAt.Value.ToTz(Tz.Eastern);
+        System.DateTimeOffset eastern1 = startAt.Value.ToTz(Tz.Eastern);
         eastern1.Day.Should().Be(1);
 
-        System.DateTime eastern2 = endAt.Value.ToTz(Tz.Eastern);
+        System.DateTimeOffset eastern2 = endAt.Value.ToTz(Tz.Eastern);
         eastern2.Day.Should().Be(31);
     }
 }

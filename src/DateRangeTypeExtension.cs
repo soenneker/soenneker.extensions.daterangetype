@@ -1,9 +1,9 @@
 ﻿using System.Diagnostics.Contracts;
 using Soenneker.Enums.UnitOfTime;
-using Soenneker.Extensions.DateTime.Day;
-using Soenneker.Extensions.DateTime.Month;
-using Soenneker.Extensions.DateTime.Week;
-using Soenneker.Extensions.DateTime.Year;
+using Soenneker.Extensions.DateTimeOffsets.Days;
+using Soenneker.Extensions.DateTimeOffsets.Months;
+using Soenneker.Extensions.DateTimeOffsets.Weeks;
+using Soenneker.Extensions.DateTimeOffsets.Years;
 
 namespace Soenneker.Extensions.DateRangeType;
 
@@ -16,56 +16,56 @@ public static class DateRangeTypeExtension
     /// Returns UTC values
     /// </summary>
     [Pure]
-    public static (System.DateTime? startAt, System.DateTime? endAt) GetDateTimesFromRange(this Enums.DateRangeType.DateRangeType dateRangeType, System.TimeZoneInfo timeZoneInfo)
+    public static (System.DateTimeOffset? startAt, System.DateTimeOffset? endAt) GetDateTimesFromRange(this Enums.DateRangeType.DateRangeType dateRangeType, System.TimeZoneInfo timeZoneInfo)
     {
-         System.DateTime utcNow = System.DateTime.UtcNow;
+         System.DateTimeOffset utcNow = System.DateTimeOffset.UtcNow;
 
         switch (dateRangeType.Name)
         {
             case nameof(Enums.DateRangeType.DateRangeType.Today):
                 {
-                    System.DateTime start = utcNow.ToStartOfTzDay(timeZoneInfo);
+                    System.DateTimeOffset start = utcNow.ToStartOfTzDay(timeZoneInfo);
                     return (start, utcNow);
                 }
             case nameof(Enums.DateRangeType.DateRangeType.Yesterday):
                 {
-                    System.DateTime start = utcNow.ToStartOfPreviousTzDay(timeZoneInfo);
-                    System.DateTime end = utcNow.ToEndOfPreviousTzDay(timeZoneInfo);
+                    System.DateTimeOffset start = utcNow.ToStartOfPreviousTzDay(timeZoneInfo);
+                    System.DateTimeOffset end = utcNow.ToEndOfPreviousTzDay(timeZoneInfo);
                     return (start, end);
                 }
             case nameof(Enums.DateRangeType.DateRangeType.Custom):
                 return (null, null);
             case nameof(Enums.DateRangeType.DateRangeType.CurrentWeek):
                 {
-                    System.DateTime start = utcNow.ToStartOfTzWeek(timeZoneInfo);
+                    System.DateTimeOffset start = utcNow.ToStartOfTzWeek(timeZoneInfo);
                     return (start, utcNow);
                 }
             case nameof(Enums.DateRangeType.DateRangeType.PreviousWeek):
                 {
-                    System.DateTime start = utcNow.ToStartOfPreviousTzWeek(timeZoneInfo);
-                    System.DateTime end = utcNow.ToEndOfPreviousTzWeek(timeZoneInfo);
+                    System.DateTimeOffset start = utcNow.ToStartOfPreviousTzWeek(timeZoneInfo);
+                    System.DateTimeOffset end = utcNow.ToEndOfPreviousTzWeek(timeZoneInfo);
                     return (start, end);
                 }
             case nameof(Enums.DateRangeType.DateRangeType.CurrentMonth):
                 {
-                    System.DateTime start = utcNow.ToStartOfTzMonth(timeZoneInfo);
+                    System.DateTimeOffset start = utcNow.ToStartOfTzMonth(timeZoneInfo);
                     return (start, utcNow);
                 }
             case nameof(Enums.DateRangeType.DateRangeType.PreviousMonth):
                 {
-                    System.DateTime start = utcNow.ToStartOfPreviousTzMonth(timeZoneInfo);
-                    System.DateTime end = utcNow.ToEndOfPreviousTzMonth(timeZoneInfo);
+                    System.DateTimeOffset start = utcNow.ToStartOfPreviousTzMonth(timeZoneInfo);
+                    System.DateTimeOffset end = utcNow.ToEndOfPreviousTzMonth(timeZoneInfo);
                     return (start, end);
                 }
             case nameof(Enums.DateRangeType.DateRangeType.CurrentYear):
                 {
-                    System.DateTime start = utcNow.ToStartOfTzYear(timeZoneInfo);
+                    System.DateTimeOffset start = utcNow.ToStartOfTzYear(timeZoneInfo);
                     return (start, utcNow);
                 }
             case nameof(Enums.DateRangeType.DateRangeType.PreviousYear):
                 {
-                    System.DateTime start = utcNow.ToStartOfPreviousTzYear(timeZoneInfo);
-                    System.DateTime end = utcNow.ToEndOfPreviousTzYear(timeZoneInfo);
+                    System.DateTimeOffset start = utcNow.ToStartOfPreviousTzYear(timeZoneInfo);
+                    System.DateTimeOffset end = utcNow.ToEndOfPreviousTzYear(timeZoneInfo);
                     return (start, end);
                 }
             default:
