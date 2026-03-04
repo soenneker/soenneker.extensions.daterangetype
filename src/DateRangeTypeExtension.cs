@@ -22,7 +22,7 @@ public static class DateRangeTypeExtension
 
         switch (dateRangeType.Name)
         {
-            case nameof(Enums.DateRangeType.DateRangeType.Today):
+            case Enums.DateRangeType.DateRangeType.TodayName:
                 {
                     System.DateTimeOffset start = utcNow.ToStartOfTzDay(timeZoneInfo);
                     return (start, utcNow);
