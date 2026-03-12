@@ -28,7 +28,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\src\Soenneker.Extensions.DateRangeType.csproj" />
+        <ProjectReference Include="..\..\src\Soenneker.Extensions.DateRangeType\Soenneker.Extensions.DateRangeType.csproj" />
     </ItemGroup>
 
     <ItemGroup>
