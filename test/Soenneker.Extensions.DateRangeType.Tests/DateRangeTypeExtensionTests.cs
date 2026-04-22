@@ -1,26 +1,25 @@
-﻿using Soenneker.Tests.FixturedUnit;
+using Soenneker.Tests.HostedUnit;
 using AwesomeAssertions;
 using Soenneker.Extensions.DateTimeOffsets;
 using Soenneker.Extensions.DateTimeOffsets.Months;
 using Soenneker.Utils.TimeZones;
-using Xunit;
 
 namespace Soenneker.Extensions.DateRangeType.Tests;
 
-[Collection("Collection")]
-public class DateRangeTypeExtensionTests : FixturedUnitTest
+[ClassDataSource<Host>(Shared = SharedType.PerTestSession)]
+public class DateRangeTypeExtensionTests : HostedUnitTest
 {
 
-    public DateRangeTypeExtensionTests(Fixture fixture, ITestOutputHelper output) : base(fixture, output)
+    public DateRangeTypeExtensionTests(Host host) : base(host)
     {
     }
 
-    [Fact]
+    [Test]
     public void Default()
     {
     }
 
-    [Fact]
+    [Test]
     public void GetDateTimesFromRange_Today_should_give_expected()
     {
         Enums.DateRangeType.DateRangeType dateRange = Enums.DateRangeType.DateRangeType.Today;
@@ -32,7 +31,7 @@ public class DateRangeTypeExtensionTests : FixturedUnitTest
         System.DateTimeOffset eastern2 = endAt.Value.ToTz(Tz.Eastern);
     }
 
-    [Fact]
+    [Test]
     public void GetDateTimesFromRange_Yesterday_should_give_expected()
     {
         Enums.DateRangeType.DateRangeType dateRange = Enums.DateRangeType.DateRangeType.Yesterday;
@@ -44,7 +43,7 @@ public class DateRangeTypeExtensionTests : FixturedUnitTest
         _ = endAt.Value.ToTz(Tz.Eastern);
     }
 
-    [Fact]
+    [Test]
     public void GetDateTimesFromRange_CurrentWeek_should_give_expected()
     {
         Enums.DateRangeType.DateRangeType dateRange = Enums.DateRangeType.DateRangeType.CurrentWeek;
@@ -56,7 +55,7 @@ public class DateRangeTypeExtensionTests : FixturedUnitTest
         _ = endAt.Value.ToTz(Tz.Eastern);
     }
 
-    [Fact]
+    [Test]
     public void GetDateTimesFromRange_PreviousWeek_should_give_expected()
     {
         Enums.DateRangeType.DateRangeType dateRange = Enums.DateRangeType.DateRangeType.PreviousWeek;
@@ -67,7 +66,7 @@ public class DateRangeTypeExtensionTests : FixturedUnitTest
         _ = endAt.Value.ToTz(Tz.Eastern);
     }
 
-    [Fact]
+    [Test]
     public void GetDateTimesFromRange_CurrentMonth_should_give_expected()
     {
         Enums.DateRangeType.DateRangeType dateRange = Enums.DateRangeType.DateRangeType.CurrentMonth;
@@ -80,7 +79,7 @@ public class DateRangeTypeExtensionTests : FixturedUnitTest
         _ = endAt.Value.ToTz(Tz.Eastern);
     }
 
-    [Fact]
+    [Test]
     public void GetDateTimesFromRange_PreviousMonth_should_give_expected()
     {
         Enums.DateRangeType.DateRangeType dateRange = Enums.DateRangeType.DateRangeType.PreviousMonth;
@@ -101,7 +100,7 @@ public class DateRangeTypeExtensionTests : FixturedUnitTest
         eastern2.Minute.Should().Be(59);
     }
 
-    [Fact]
+    [Test]
     public void GetDateTimesFromRange_PreviousYear_should_give_expected()
     {
         Enums.DateRangeType.DateRangeType dateRange = Enums.DateRangeType.DateRangeType.PreviousYear;
