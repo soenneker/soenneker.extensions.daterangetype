@@ -73,6 +73,11 @@ public static class DateRangeTypeExtension
         }
     }
 
+    /// <summary>
+    /// Executes the to unit of time operation.
+    /// </summary>
+    /// <param name="dateRangeType">The date range type.</param>
+    /// <returns>The result of the operation.</returns>
     public static UnitOfTime ToUnitOfTime(this Enums.DateRangeType.DateRangeType dateRangeType)
     {
         // TODO: add more resolution
