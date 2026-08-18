@@ -44,7 +44,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Soenneker.Enums.DateRangeType" Version="4.0.144" />
-        <PackageReference Include="Soenneker.Extensions.DateTimeOffsets.Suite" Version="4.0.436" />
+        <PackageReference Include="Soenneker.Enums.DateRangeType" Version="4.0.145" />
+        <PackageReference Include="Soenneker.Extensions.DateTimeOffsets.Suite" Version="4.0.438" />
     </ItemGroup>
 </Project>
