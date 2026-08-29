@@ -15,6 +15,7 @@ public static class DateRangeTypeExtension
     /// <summary>
     /// Returns UTC values
     /// </summary>
+    /// <returns>UTC values.</returns>
     [Pure]
     public static (System.DateTimeOffset? startAt, System.DateTimeOffset? endAt) GetDateTimesFromRange(this Enums.DateRangeType.DateRangeType dateRangeType, System.TimeZoneInfo timeZoneInfo)
     {
@@ -74,10 +75,10 @@ public static class DateRangeTypeExtension
     }
 
     /// <summary>
-    /// Executes the to unit of time operation.
+    /// Chooses the charting resolution for a date-range preset: hours for today or yesterday, and seconds for other ranges.
     /// </summary>
-    /// <param name="dateRangeType">The date range type.</param>
-    /// <returns>The result of the operation.</returns>
+    /// <param name="dateRangeType">The preset whose resolution is required.</param>
+    /// <returns>The resolution used for the range.</returns>
     public static UnitOfTime ToUnitOfTime(this Enums.DateRangeType.DateRangeType dateRangeType)
     {
         // TODO: add more resolution
