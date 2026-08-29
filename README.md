@@ -4,10 +4,24 @@
 [![](https://img.shields.io/github/actions/workflow/status/soenneker/soenneker.extensions.daterangetype/codeql.yml?label=CodeQL&style=for-the-badge)](https://github.com/soenneker/soenneker.extensions.daterangetype/actions/workflows/codeql.yml)
 
 # ![](https://user-images.githubusercontent.com/4441470/224455560-91ed3ee7-f510-4041-a8d2-3fc093025112.png) Soenneker.Extensions.DateRangeType
-### A collection of helpful DateRangeType enum extension methods
+
+A collection of helpful DateRangeType enum extension methods.
 
 ## Installation
 
-```
+```bash
 dotnet add package Soenneker.Extensions.DateRangeType
 ```
+
+## Quick start
+
+```csharp
+using Soenneker.Extensions.DateRangeType;
+
+// Given an existing Enums.DateRangeType.DateRangeType named dateRangeType:
+var result = dateRangeType.ToUnitOfTime();
+```
+
+## Common operations
+
+- `ToUnitOfTime()` - Maps `Today` and `Yesterday` to hourly resolution; other date-range values currently map to seconds.
