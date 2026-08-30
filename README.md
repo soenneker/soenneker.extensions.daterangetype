@@ -5,7 +5,7 @@
 
 # ![](https://user-images.githubusercontent.com/4441470/224455560-91ed3ee7-f510-4041-a8d2-3fc093025112.png) Soenneker.Extensions.DateRangeType
 
-A collection of helpful DateRangeType enum extension methods.
+Converts `Soenneker.Enums.DateRangeType.DateRangeType` presets into UTC date boundaries using a supplied time zone.
 
 ## Installation
 
@@ -13,15 +13,40 @@ A collection of helpful DateRangeType enum extension methods.
 dotnet add package Soenneker.Extensions.DateRangeType
 ```
 
-## Quick start
+## Resolve a preset
 
 ```csharp
+using Soenneker.Enums.DateRangeType;
 using Soenneker.Extensions.DateRangeType;
 
-// Given an existing Enums.DateRangeType.DateRangeType named dateRangeType:
-var result = dateRangeType.ToUnitOfTime();
+TimeZoneInfo timeZone = TimeZoneInfo.FindSystemTimeZoneById("America/New_York");
+
+(DateTimeOffset? startAt, DateTimeOffset? endAt) =
+    DateRangeType.CurrentMonth.GetDateTimesFromRange(timeZone);
 ```
 
-## Common operations
+Both non-null results are UTC instants. The supplied time zone determines the local calendar boundary before that boundary is converted to UTC, so offsets remain correct across daylight-saving transitions.
 
-- `ToUnitOfTime()` - Maps `Today` and `Yesterday` to hourly resolution; other date-range values currently map to seconds.
+## Range behavior
+
+| Preset | Start | End |
+| --- | --- | --- |
+| `Today` | Start of the current local day | Time of the call |
+| `Yesterday` | Start of the previous local day | Last tick of the previous local day |
+| `CurrentWeek` | Start of the current local week | Time of the call |
+| `PreviousWeek` | Start of the previous local week | Last tick of the previous local week |
+| `CurrentMonth` | Start of the current local month | Time of the call |
+| `PreviousMonth` | Start of the previous local month | Last tick of the previous local month |
+| `CurrentYear` | Start of the current local year | Time of the call |
+| `PreviousYear` | Start of the previous local year | Last tick of the previous local year |
+| `Custom` or an unsupported value | `null` | `null` |
+
+Weeks begin on Monday. Current ranges use `DateTimeOffset.UtcNow` captured during the call; the API does not accept an external clock or custom endpoint.
+
+## Unit mapping
+
+```csharp
+UnitOfTime unit = DateRangeType.Today.ToUnitOfTime();
+```
+
+`Today` and `Yesterday` map to `UnitOfTime.Hour`. Every other value maps to `UnitOfTime.Second`, including `Custom`.

@@ -8,18 +8,20 @@ using Soenneker.Extensions.DateTimeOffsets.Years;
 namespace Soenneker.Extensions.DateRangeType;
 
 /// <summary>
-/// A collection of helpful DateRangeType enum extension methods
+/// Provides date-boundary and unit mappings for date-range presets.
 /// </summary>
 public static class DateRangeTypeExtension
 {
     /// <summary>
-    /// Returns UTC values
+    /// Resolves a date-range preset into UTC instants using local calendar boundaries in the supplied time zone.
     /// </summary>
-    /// <returns>UTC values.</returns>
+    /// <param name="dateRangeType">The preset to resolve.</param>
+    /// <param name="timeZoneInfo">The time zone whose local calendar determines the boundaries.</param>
+    /// <returns>The inclusive UTC start and end. <c>Custom</c> and unsupported values return <c>(null, null)</c>.</returns>
     [Pure]
     public static (System.DateTimeOffset? startAt, System.DateTimeOffset? endAt) GetDateTimesFromRange(this Enums.DateRangeType.DateRangeType dateRangeType, System.TimeZoneInfo timeZoneInfo)
     {
-         System.DateTimeOffset utcNow = System.DateTimeOffset.UtcNow;
+        System.DateTimeOffset utcNow = System.DateTimeOffset.UtcNow;
 
         switch (dateRangeType.Name)
         {
@@ -75,7 +77,7 @@ public static class DateRangeTypeExtension
     }
 
     /// <summary>
-    /// Chooses the charting resolution for a date-range preset: hours for today or yesterday, and seconds for other ranges.
+    /// Maps today and yesterday to hours and every other preset to seconds.
     /// </summary>
     /// <param name="dateRangeType">The preset whose resolution is required.</param>
     /// <returns>The resolution used for the range.</returns>
