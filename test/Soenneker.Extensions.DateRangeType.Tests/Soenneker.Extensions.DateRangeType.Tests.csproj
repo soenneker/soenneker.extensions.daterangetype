@@ -26,5 +26,11 @@
     <ItemGroup>
         <ProjectReference Include="..\..\src\Soenneker.Extensions.DateRangeType\Soenneker.Extensions.DateRangeType.csproj" />
     </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="AwesomeAssertions" Version="9.6.0" />
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="10.0.12" />
+        <PackageReference Include="Soenneker.Extensions.DateTimeOffsets" Version="4.0.163" />
+        <PackageReference Include="Soenneker.Extensions.DateTimeOffsets.Months" Version="4.0.138" />
+    </ItemGroup>
 </Project>
 
