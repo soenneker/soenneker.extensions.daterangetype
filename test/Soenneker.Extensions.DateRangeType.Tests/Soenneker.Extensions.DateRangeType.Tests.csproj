@@ -29,7 +29,7 @@
     <ItemGroup>
         <PackageReference Include="AwesomeAssertions" Version="9.6.0" />
         <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="10.0.12" />
-        <PackageReference Include="Soenneker.Extensions.DateTimeOffsets" Version="4.0.163" />
+        <PackageReference Include="Soenneker.Extensions.DateTimeOffsets" Version="4.0.165" />
         <PackageReference Include="Soenneker.Extensions.DateTimeOffsets.Months" Version="4.0.138" />
     </ItemGroup>
 </Project>
