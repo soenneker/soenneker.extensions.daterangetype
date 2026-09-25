@@ -17,10 +17,10 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Soenneker.Utils.Test" Version="4.0.330" />
-        <PackageReference Include="Soenneker.Tests.HostedUnit" Version="4.0.286" />
-        <PackageReference Include="Soenneker.Utils.TimeZones" Version="4.0.769" />
-        <PackageReference Include="TUnit" Version="1.69.0" />
+        <PackageReference Include="Soenneker.Utils.Test" Version="4.0.331" />
+        <PackageReference Include="Soenneker.Tests.HostedUnit" Version="4.0.289" />
+        <PackageReference Include="Soenneker.Utils.TimeZones" Version="4.0.770" />
+        <PackageReference Include="TUnit" Version="1.69.16" />
     </ItemGroup>
 
     <ItemGroup>
@@ -29,8 +29,8 @@
     <ItemGroup>
         <PackageReference Include="AwesomeAssertions" Version="9.6.0" />
         <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="10.0.12" />
-        <PackageReference Include="Soenneker.Extensions.DateTimeOffsets" Version="4.0.163" />
-        <PackageReference Include="Soenneker.Extensions.DateTimeOffsets.Months" Version="4.0.138" />
+        <PackageReference Include="Soenneker.Extensions.DateTimeOffsets" Version="4.0.166" />
+        <PackageReference Include="Soenneker.Extensions.DateTimeOffsets.Months" Version="4.0.141" />
     </ItemGroup>
 </Project>
 
