@@ -50,7 +50,7 @@
     <ItemGroup>
         <PackageReference Include="Soenneker.Enums.UnitOfTime" Version="4.0.614" />
         <PackageReference Include="Soenneker.Extensions.DateTimeOffsets.Days" Version="4.0.168" />
-        <PackageReference Include="Soenneker.Extensions.DateTimeOffsets.Months" Version="4.0.143" />
+        <PackageReference Include="Soenneker.Extensions.DateTimeOffsets.Months" Version="4.0.144" />
         <PackageReference Include="Soenneker.Extensions.DateTimeOffsets.Weeks" Version="4.0.136" />
         <PackageReference Include="Soenneker.Extensions.DateTimeOffsets.Years" Version="4.0.132" />
     </ItemGroup>
