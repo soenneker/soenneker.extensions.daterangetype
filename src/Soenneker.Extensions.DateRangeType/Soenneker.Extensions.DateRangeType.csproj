@@ -48,7 +48,7 @@
         <PackageReference Include="Soenneker.Enums.DateRangeType" Version="4.0.171" />
     </ItemGroup>
     <ItemGroup>
-        <PackageReference Include="Soenneker.Enums.UnitOfTime" Version="4.0.621" />
+        <PackageReference Include="Soenneker.Enums.UnitOfTime" Version="4.0.625" />
         <PackageReference Include="Soenneker.Extensions.DateTimeOffsets.Days" Version="4.0.174" />
         <PackageReference Include="Soenneker.Extensions.DateTimeOffsets.Months" Version="4.0.150" />
         <PackageReference Include="Soenneker.Extensions.DateTimeOffsets.Weeks" Version="4.0.143" />
