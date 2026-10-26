@@ -1,6 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <TargetFramework>net11.0</TargetFramework>
+        <Features Condition="'$(TargetFramework)' == 'net11.0'">$(Features);runtime-async=on</Features>
         <IsAotCompatible>true</IsAotCompatible>
         <Nullable>enable</Nullable>
         <Platforms>AnyCPU</Platforms>
@@ -49,9 +50,9 @@
     </ItemGroup>
     <ItemGroup>
         <PackageReference Include="Soenneker.Enums.UnitOfTime" Version="11.0.637" />
-        <PackageReference Include="Soenneker.Extensions.DateTimeOffsets.Days" Version="11.0.189" />
-        <PackageReference Include="Soenneker.Extensions.DateTimeOffsets.Months" Version="11.0.164" />
-        <PackageReference Include="Soenneker.Extensions.DateTimeOffsets.Weeks" Version="11.0.156" />
-        <PackageReference Include="Soenneker.Extensions.DateTimeOffsets.Years" Version="11.0.149" />
+        <PackageReference Include="Soenneker.Extensions.DateTimeOffsets.Days" Version="11.0.190" />
+        <PackageReference Include="Soenneker.Extensions.DateTimeOffsets.Months" Version="11.0.165" />
+        <PackageReference Include="Soenneker.Extensions.DateTimeOffsets.Weeks" Version="11.0.157" />
+        <PackageReference Include="Soenneker.Extensions.DateTimeOffsets.Years" Version="11.0.150" />
     </ItemGroup>
 </Project>

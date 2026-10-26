@@ -2,6 +2,8 @@
     <PropertyGroup>
         <OutputType>Exe</OutputType>
         <TargetFramework>net11.0</TargetFramework>
+
+        <Features Condition="'$(TargetFramework)' == 'net11.0'">$(Features);runtime-async=on</Features>
         <Nullable>enable</Nullable>
         <IsPackable>false</IsPackable>
     </PropertyGroup>
@@ -18,7 +20,7 @@
 
     <ItemGroup>
         <PackageReference Include="Soenneker.Utils.Test" Version="11.0.343" />
-        <PackageReference Include="Soenneker.Tests.HostedUnit" Version="11.0.341" />
+        <PackageReference Include="Soenneker.Tests.HostedUnit" Version="11.0.342" />
         <PackageReference Include="Soenneker.Utils.TimeZones" Version="11.0.781" />
         <PackageReference Include="TUnit" Version="1.76.28" />
     </ItemGroup>
@@ -29,8 +31,8 @@
     <ItemGroup>
         <PackageReference Include="AwesomeAssertions" Version="9.6.0" />
         <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="11.0.0-rc.3.26522.148" />
-        <PackageReference Include="Soenneker.Extensions.DateTimeOffsets" Version="11.0.193" />
-        <PackageReference Include="Soenneker.Extensions.DateTimeOffsets.Months" Version="11.0.164" />
+        <PackageReference Include="Soenneker.Extensions.DateTimeOffsets" Version="11.0.194" />
+        <PackageReference Include="Soenneker.Extensions.DateTimeOffsets.Months" Version="11.0.165" />
     </ItemGroup>
 </Project>
 
