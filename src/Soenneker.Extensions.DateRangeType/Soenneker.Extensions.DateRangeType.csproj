@@ -50,8 +50,8 @@
     </ItemGroup>
     <ItemGroup>
         <PackageReference Include="Soenneker.Extensions.DateTimeOffsets.Days" Version="11.0.197" />
-        <PackageReference Include="Soenneker.Extensions.DateTimeOffsets.Months" Version="11.0.168" />
+        <PackageReference Include="Soenneker.Extensions.DateTimeOffsets.Months" Version="11.0.169" />
         <PackageReference Include="Soenneker.Extensions.DateTimeOffsets.Weeks" Version="11.0.162" />
-        <PackageReference Include="Soenneker.Extensions.DateTimeOffsets.Years" Version="11.0.153" />
+        <PackageReference Include="Soenneker.Extensions.DateTimeOffsets.Years" Version="11.0.154" />
     </ItemGroup>
 </Project>
