@@ -46,12 +46,12 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Soenneker.Enums.DateRangeType" Version="11.0.189" />
+        <PackageReference Include="Soenneker.Enums.DateRangeType" Version="11.0.190" />
     </ItemGroup>
     <ItemGroup>
         <PackageReference Include="Soenneker.Extensions.DateTimeOffsets.Days" Version="11.0.201" />
-        <PackageReference Include="Soenneker.Extensions.DateTimeOffsets.Months" Version="11.0.171" />
+        <PackageReference Include="Soenneker.Extensions.DateTimeOffsets.Months" Version="11.0.174" />
         <PackageReference Include="Soenneker.Extensions.DateTimeOffsets.Weeks" Version="11.0.166" />
-        <PackageReference Include="Soenneker.Extensions.DateTimeOffsets.Years" Version="11.0.158" />
+        <PackageReference Include="Soenneker.Extensions.DateTimeOffsets.Years" Version="11.0.159" />
     </ItemGroup>
 </Project>
